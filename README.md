@@ -33,12 +33,11 @@ Converts a percentage value to a number.
 **Examples:**
 
 ```javascript
-const { isPercent } = require('string-percent');
+const { getPercent } = require('string-percent');
 
-isPercent('50%'); // <= true
-isPercent('2.5 %'); // <= true
-isPercent(0.9); // <= true
-isPercent('foo%'); // <= false
+getPercent('50%'); // <= 50
+getPercent('2.5 %'); // <= 2.5
+getPercent(0.9); // <= 90
 ```
 
 ### License
