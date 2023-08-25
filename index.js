@@ -3,6 +3,7 @@
 /**
  * Checks if a value is a percentage.
  * @param {number|string} input - The value to check.
+ * @param {options} options - Options for checking a given value. 
  * @returns {boolean} `true` if the value is a percentage, otherwise `false`.
  * 
  * @example
@@ -13,10 +14,13 @@
  * isPercent('2.5 %'); // <= true
  * isPercent(0.9); // <= true
  * isPercent('foo%'); // <= false
+ * isPercent(30, { allowNumber: false }); // <= false
  * ```
  */
-function isPercent(input) {
-    if (typeof input === 'number') return true;
+function isPercent(input, options = {}) {
+    const { allowNumber } = { allowNumber: true, ...options };
+
+    if (typeof input === 'number') return allowNumber;
 
     if (typeof input === 'string') {
         const val = input.trim();

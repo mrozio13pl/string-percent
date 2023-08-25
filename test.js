@@ -5,6 +5,7 @@ test('isPercent detects valid percentages', t => {
     t.true(isPercent(50));
     t.true(isPercent('75%'));
     t.true(isPercent('  25%   '));
+    t.true(isPercent('45%', { allowNumber: false }));
 });
 
 test('isPercent detects invalid inputs', t => {
@@ -12,6 +13,7 @@ test('isPercent detects invalid inputs', t => {
     t.false(isPercent('100'));
     t.false(isPercent('foo%'));
     t.false(isPercent(' %50'));
+    t.false(isPercent(30, { allowNumber: false }));
 });
 
 test('getPercent converts valid inputs', t => {

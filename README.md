@@ -4,11 +4,13 @@
 
 ## Usage
 
-### isPercent(input)
+### isPercent(input, options?)
 
 Checks if a value is a percentage.
 
 - `input` (`number|string`): The value to check.
+- `options` (`options`): Options for checking a given value:
+    - `allowNumber` (`boolean`): Returns **false** if an input is a number. Set to **true** by default.
 - Returns: `boolean` - **true** if the value is a percentage, otherwise **false**.
 
 **Examples:**
@@ -20,6 +22,7 @@ isPercent('50%'); // <= true
 isPercent('2.5 %'); // <= true
 isPercent(0.9); // <= true
 isPercent('foo%'); // <= false
+isPercent(30, { allowNumber: false }); // <= false
 ```
 
 ### getPercent(input)

@@ -11,6 +11,9 @@
     "license": "MIT",
     "homepage": "https://github.com/mrozio13pl/string-percent",
     "bugs": "https://github.com/mrozio13pl/string-percent/issues",
+    "engines": {
+        "node": ">=8"
+    },
     "keywords": [
         "string",
         "percent"
